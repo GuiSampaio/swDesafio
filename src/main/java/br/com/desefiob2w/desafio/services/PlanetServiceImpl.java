@@ -121,5 +121,4 @@ public class PlanetServiceImpl implements PlanetService {
                 .mapToInt(a -> a.getFilms().size())
                 .sum());
     }
-
 }
