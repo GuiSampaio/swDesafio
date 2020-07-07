@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "planet")

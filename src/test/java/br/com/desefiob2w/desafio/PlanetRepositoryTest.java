@@ -5,14 +5,20 @@ import br.com.desefiob2w.desafio.repository.PlanetRepository;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.contains;
+import static org.mockito.Mockito.when;
 
-import org.hamcrest.CoreMatchers;
+import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.event.annotation.BeforeTestExecution;
+import org.springframework.test.context.event.annotation.BeforeTestMethod;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.hamcrest.Matchers.hasProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +31,21 @@ public class PlanetRepositoryTest {
 
     @Autowired
     private PlanetRepository planetRepository;
+
+//    @BeforeTestExecution
+//    public void initInputs(){
+//        Planet planet1 = new Planet("1", "Kashyyyk", "tropical", "jungle, forests, lakes, rivers", "1");
+//        Planet planet2 = new Planet("2", "Polis Massa", "artificial temperate", "airless asteroid", "1");
+//
+//
+//        List<Planet> lista = new ArrayList<>();
+//        lista.add(planet1);
+//        lista.add(planet2);
+//
+//        when(planetRepository.findAll())
+//                .thenReturn(lista);
+//    }
+
 
     @Test
     public void whenCreate_thePersistData() {
@@ -72,6 +93,7 @@ public class PlanetRepositoryTest {
 
     @Test
     public void whenFindAll_thenFindAll(){
+
         Planet planet1 = new Planet("1", "Kashyyyk", "tropical", "jungle, forests, lakes, rivers", "1");
         Planet planet2 = new Planet("2", "Polis Massa", "artificial temperate", "airless asteroid", "1");
 
@@ -85,6 +107,7 @@ public class PlanetRepositoryTest {
         List<Planet> planets = planetRepository.findAll();
 
         Assertions.assertTrue(planets.containsAll(lista));
+
     }
 
 }
