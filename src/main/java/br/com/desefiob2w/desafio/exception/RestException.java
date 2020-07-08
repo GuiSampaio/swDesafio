@@ -1,4 +1,4 @@
-package br.com.desefiob2w.desafio.error;
+package br.com.desefiob2w.desafio.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "bd8ce7d7-965b-4d0b-b132-4fb754413fb5",
+		"name": "Teste API-StarWars",
+		"description": "Testes para desafio API StarWars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Criar um novo planeta",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "785d1988-7e9f-41c0-9356-da14b05a69c0",
+								"exec": [
+									"tests[\"Status retornado = 201\"] = responseCode.code === 201;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5f0563ab53eea838fda18834\",\r\n\t\"name\": \"Planeta de teste delete\",\r\n\t\"climate\": \"teste clima\",\r\n\t\"terrain\": \"teste terreno\"\r\n\t\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/planet/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar novo planeta nome null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ff68d6a2-4097-4841-9464-8581c000de74",
+								"exec": [
+									"tests[\"Status retornado = 400\"] = responseCode.code === 400;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"\",\r\n\t\"climate\": \"teste clima\",\r\n\t\"terrain\": \"teste terreno\"\r\n\t\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/planet/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar planeta campos null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4c58e04-b3f9-4af8-ac6d-5c4b02469e65",
+								"exec": [
+									"tests[\"Status retornado = 400\"] = responseCode.code === 400;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"\",\r\n\t\"climate\": \"\",\r\n\t\"terrain\": \"\"\r\n\t\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/planet/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "Buscar planeta por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd62ae83-bb73-4bc8-96c6-8ec70482c74d",
+								"exec": [
+									"tests[\"Status retornado = 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/findById/5f00055844a32211476c7d8a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"findById",
+								"5f00055844a32211476c7d8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos os Planetas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56a76179-e91c-4b95-b65e-43a3e5304e67",
+								"exec": [
+									"tests[\"Status retornado = 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Planeta por Nome",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d276d2c8-41e9-4f09-8bef-61d14bd1f3de",
+								"exec": [
+									"tests[\"Status retornado = 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/findByName/Tatooine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"findByName",
+								"Tatooine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar planeta nome não existente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64a86bdf-3c3f-4df9-b5d6-f615a3fc36d1",
+								"exec": [
+									"tests[\"Status retornado = 404\"] = responseCode.code === 404;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/findByName/sonic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"findByName",
+								"sonic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar planeta por ID não existe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd62ae83-bb73-4bc8-96c6-8ec70482c74d",
+								"exec": [
+									"tests[\"Status retornado = 404\"] = responseCode.code === 404;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/findById/40028922",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"findById",
+								"40028922"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "Deletar planeta por id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7eb02832-8912-4111-998a-25827407a166",
+								"exec": [
+									"tests[\"Status retornado = 204\"] = responseCode.code === 204;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/delete/5f0563ab53eea838fda18834",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"delete",
+								"5f0563ab53eea838fda18834"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar planeta id não existe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9f603729-1093-4a4a-bda0-000e41ac541b",
+								"exec": [
+									"tests[\"Status retornado = 404\"] = responseCode.code === 404;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planet/delete/sonic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planet",
+								"delete",
+								"sonic"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

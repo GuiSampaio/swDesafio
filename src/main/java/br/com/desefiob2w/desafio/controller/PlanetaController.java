@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/planet")
 public class PlanetaController {
 
     private final PlanetService planetService;
@@ -22,29 +22,29 @@ public class PlanetaController {
         this.planetService = planetService;
     }
 
-    @PostMapping(path = "create")
+    @PostMapping(path = "/create")
     public ResponseEntity<?> save(@Valid @RequestBody Planet planet, UriComponentsBuilder uriBuilder) {
         Planet pl = planetService.createPlanet(planet);
-        URI uri = uriBuilder.path("planets/findById/{id}").buildAndExpand(pl.getId()).toUri();
+        URI uri = uriBuilder.path("planet/findById/{id}").buildAndExpand(pl.getId()).toUri();
         return new ResponseEntity<>("Planeta criado: " + uri, HttpStatus.CREATED);
     }
 
-    @GetMapping(path = "planets")
+    @GetMapping(path = "/findAll")
     public ResponseEntity<?> listAll() {
         return new ResponseEntity<>(planetService.findAllPlanets(), HttpStatus.OK);
     }
 
-    @GetMapping(path = "planets/findByName/{name}")
+    @GetMapping(path = "/findByName/{name}")
     public ResponseEntity<?> findPlanetByName(@PathVariable(name = "name") String name) {
         return new ResponseEntity<>(planetService.findByName(name), HttpStatus.OK);
     }
 
-    @GetMapping(path = "planets/findById/{id}")
-    public ResponseEntity<?> getById(@PathVariable(name = "id") String id) {
+    @GetMapping(path = "/findById/{id}")
+    public ResponseEntity<?> getPlanetById(@PathVariable(name = "id") String id) {
         return new ResponseEntity<>(planetService.findById(id), HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "delete/{id}")
+    @DeleteMapping(path = "/delete/{id}")
     public ResponseEntity<?> deletePlanet(@PathVariable(name = "id") String id) {
         planetService.deletePlanet(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
