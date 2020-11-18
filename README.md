@@ -33,3 +33,15 @@ O objetivo do desafio é desenvolver uma API que contenha os dados dos planetas.
     - Spring Boot
     - MongoDB (Utilizando o serviço de banco de dados Atlas: MongoDB)
     - Testes com JUnit 5 e Postman
+    
+ 3. #### Rotas
+ 
+       - Cria um planeta /create
+    
+       - Lista todos os planetas /findAll
+    
+       - Busca um planeta por ID /findById/{id}
+    
+       - Busca um planeta pelo Nome /findByName/{name}
+    
+       - Remove um planeta /delete/{id}

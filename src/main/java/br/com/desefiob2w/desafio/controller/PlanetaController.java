@@ -5,6 +5,7 @@ import br.com.desefiob2w.desafio.dto.ResponseDTO;
 import br.com.desefiob2w.desafio.exception.PlanetException;
 import br.com.desefiob2w.desafio.services.PlanetService;
 import br.com.desefiob2w.desafio.util.Messages;
+import br.com.desefiob2w.desafio.util.Routes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = Routes.API)
 public class PlanetaController {
 
     private final PlanetService planetService;
@@ -25,7 +26,7 @@ public class PlanetaController {
         this.planetService = planetService;
     }
 
-    @PostMapping(path = "create")
+    @PostMapping(path = Routes.INCLUDE)
     public ResponseEntity<?> save(@Valid @RequestBody Planet planet, UriComponentsBuilder uriBuilder) {
         try {
             Planet pl = planetService.createPlanet(planet);
@@ -38,7 +39,7 @@ public class PlanetaController {
         }
     }
 
-    @GetMapping(path = "findAll")
+    @GetMapping(path = Routes.FIND_ALL)
     public ResponseEntity<?> listAll() {
         try {
             return new ResponseEntity<>(planetService.findAllPlanets(), HttpStatus.OK);
@@ -49,7 +50,7 @@ public class PlanetaController {
         }
     }
 
-    @GetMapping(path = "findByName/{name}")
+    @GetMapping(path = Routes.FIND_BY_NAME)
     public ResponseEntity<?> findPlanetByName(@PathVariable(name = "name") String name) {
         try {
             return new ResponseEntity<>(planetService.findByName(name), HttpStatus.OK);
@@ -60,7 +61,7 @@ public class PlanetaController {
         }
     }
 
-    @GetMapping(path = "findById/{id}")
+    @GetMapping(path = Routes.FIND_BY_ID)
     public ResponseEntity<?> getPlanetById(@PathVariable(name = "id") String id) {
         try {
             return new ResponseEntity<>(planetService.findById(id), HttpStatus.OK);
@@ -71,11 +72,11 @@ public class PlanetaController {
         }
     }
 
-    @DeleteMapping(path = "delete/{id}")
+    @DeleteMapping(path = Routes.REMOVE)
     public ResponseEntity<?> deletePlanet(@PathVariable(name = "id") String id) {
         try {
             planetService.deletePlanet(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ResponseDTO<>(Messages.DELETED));
         } catch (PlanetException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {

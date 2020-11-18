@@ -8,5 +8,6 @@ public class Messages {
     public final static String EMPTY_NAME = "Você deve preencher o nome do planeta.";
     public final static String EMPTY_ID = "Você deve preencher o id do planeta.";
     public final static String EMPTY_LIST = "A lista está vazia.";
+    public final static String DELETED = "Planeta deletado com sucesso.";
 
 }
