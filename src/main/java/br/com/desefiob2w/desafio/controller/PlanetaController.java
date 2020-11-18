@@ -1,7 +1,10 @@
 package br.com.desefiob2w.desafio.controller;
 
 import br.com.desefiob2w.desafio.document.Planet;
+import br.com.desefiob2w.desafio.dto.ResponseDTO;
+import br.com.desefiob2w.desafio.exception.PlanetException;
 import br.com.desefiob2w.desafio.services.PlanetService;
+import br.com.desefiob2w.desafio.util.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +15,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/planet")
+@RequestMapping(value = "/")
 public class PlanetaController {
 
     private final PlanetService planetService;
@@ -22,32 +25,62 @@ public class PlanetaController {
         this.planetService = planetService;
     }
 
-    @PostMapping(path = "/create")
+    @PostMapping(path = "create")
     public ResponseEntity<?> save(@Valid @RequestBody Planet planet, UriComponentsBuilder uriBuilder) {
-        Planet pl = planetService.createPlanet(planet);
-        URI uri = uriBuilder.path("planet/findById/{id}").buildAndExpand(pl.getId()).toUri();
-        return new ResponseEntity<>("Planeta criado: " + uri, HttpStatus.CREATED);
+        try {
+            Planet pl = planetService.createPlanet(planet);
+            URI uri = uriBuilder.path("planet/findById/{id}").buildAndExpand(pl.getId()).toUri();
+            return ResponseEntity.created(uri).body(new ResponseDTO<>(planet, Messages.CREATED));
+        } catch (PlanetException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
-    @GetMapping(path = "/findAll")
+    @GetMapping(path = "findAll")
     public ResponseEntity<?> listAll() {
-        return new ResponseEntity<>(planetService.findAllPlanets(), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(planetService.findAllPlanets(), HttpStatus.OK);
+        } catch (PlanetException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
-    @GetMapping(path = "/findByName/{name}")
+    @GetMapping(path = "findByName/{name}")
     public ResponseEntity<?> findPlanetByName(@PathVariable(name = "name") String name) {
-        return new ResponseEntity<>(planetService.findByName(name), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(planetService.findByName(name), HttpStatus.OK);
+        } catch (PlanetException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
-    @GetMapping(path = "/findById/{id}")
+    @GetMapping(path = "findById/{id}")
     public ResponseEntity<?> getPlanetById(@PathVariable(name = "id") String id) {
-        return new ResponseEntity<>(planetService.findById(id), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(planetService.findById(id), HttpStatus.OK);
+        } catch (PlanetException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
-    @DeleteMapping(path = "/delete/{id}")
+    @DeleteMapping(path = "delete/{id}")
     public ResponseEntity<?> deletePlanet(@PathVariable(name = "id") String id) {
-        planetService.deletePlanet(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        try {
+            planetService.deletePlanet(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (PlanetException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
 }

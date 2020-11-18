@@ -10,7 +10,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 
 @Service
-public class SwapiServiceImpl implements SwapiService {
+public class SwApiServiceImpl implements SwApiService {
 
     @Value("${api.sw}")
     private String swapiUrl;
@@ -33,8 +33,18 @@ public class SwapiServiceImpl implements SwapiService {
     }
 
     private static RequestEntity<?> creatRequest(URI uri) {
-         RequestEntity<?> request = RequestEntity.get(uri).header("user-agent", "")
+        return RequestEntity.get(uri).header("user-agent", "")
                 .accept(MediaType.APPLICATION_JSON).build();
-         return request;
+    }
+
+    @Override
+    public String countFilms(String name) {
+
+        SwApiPlanetsDTO planetsDTO = this.findPlanetByName(name);
+
+        return Integer.toString(planetsDTO.getResults().stream()
+                .filter(nt -> nt.getName().equalsIgnoreCase(name))
+                .mapToInt(nt -> nt.getFilms().size())
+                .sum());
     }
 }
