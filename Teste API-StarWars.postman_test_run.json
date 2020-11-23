@@ -1,0 +1,678 @@
+{
+	"id": "a4d1191f-88e9-4d94-ad0f-536e0b193bd0",
+	"name": "Teste API-StarWars",
+	"timestamp": "2020-11-23T00:15:08.391Z",
+	"collection_id": "bd8ce7d7-965b-4d0b-b132-4fb754413fb5",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 100,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b053d5b5-5de1-484c-9e5b-76f0c5275fda",
+			"name": "Criar um novo planeta",
+			"time": 517,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status retornado = 201": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 201": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				1035,
+				524,
+				524,
+				527,
+				522,
+				524,
+				521,
+				519,
+				517,
+				517
+			],
+			"allTests": [
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				},
+				{
+					"Status retornado = 201": true
+				}
+			]
+		},
+		{
+			"id": "8ca0dbf6-218a-480d-927c-13d9c5a47a8d",
+			"name": "Criar novo planeta nome null",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status retornado = 400": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 400": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				3,
+				4,
+				3,
+				3,
+				4,
+				4,
+				3,
+				3,
+				3,
+				4
+			],
+			"allTests": [
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				}
+			]
+		},
+		{
+			"id": "a8021c12-1eb4-4a48-a3b8-f5167ac5b0be",
+			"name": "Criar planeta campos null",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status retornado = 400": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 400": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				4,
+				4,
+				5,
+				4,
+				4,
+				4,
+				4,
+				4,
+				5,
+				6
+			],
+			"allTests": [
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				}
+			]
+		},
+		{
+			"id": "c5c98420-1ee3-4ce4-8769-41c3f7804e96",
+			"name": "Buscar planeta por ID",
+			"time": 138,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status retornado = 200": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 200": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				139,
+				140,
+				144,
+				136,
+				139,
+				136,
+				136,
+				137,
+				137,
+				138
+			],
+			"allTests": [
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				}
+			]
+		},
+		{
+			"id": "1387f7d7-d5aa-4733-a272-10265aeef04f",
+			"name": "Buscar Todos os Planetas",
+			"time": 135,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status retornado = 200": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 200": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				137,
+				134,
+				133,
+				135,
+				134,
+				135,
+				133,
+				137,
+				133,
+				135
+			],
+			"allTests": [
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				}
+			]
+		},
+		{
+			"id": "89d22bd4-b99b-4246-a412-196eee81b56b",
+			"name": "Buscar Planeta por Nome",
+			"time": 135,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status retornado = 200": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 200": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				133,
+				143,
+				134,
+				136,
+				134,
+				136,
+				134,
+				135,
+				136,
+				135
+			],
+			"allTests": [
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				}
+			]
+		},
+		{
+			"id": "d9f3028e-9e49-452d-b31d-d4da5f138b00",
+			"name": "Buscar planeta nome não existente",
+			"time": 133,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status retornado = 400": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 400": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				135,
+				134,
+				132,
+				136,
+				133,
+				133,
+				134,
+				136,
+				134,
+				133
+			],
+			"allTests": [
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				}
+			]
+		},
+		{
+			"id": "9a56842d-d909-428e-a22d-5795d1a3e6c1",
+			"name": "Buscar planeta por ID não existe",
+			"time": 134,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status retornado = 400": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 400": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				136,
+				139,
+				135,
+				137,
+				137,
+				134,
+				136,
+				140,
+				135,
+				134
+			],
+			"allTests": [
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				}
+			]
+		},
+		{
+			"id": "b21112ca-881f-4045-b70e-544aa0663637",
+			"name": "Deletar planeta por id",
+			"time": 278,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status retornado = 200": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 200": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				273,
+				269,
+				271,
+				270,
+				276,
+				268,
+				271,
+				274,
+				268,
+				278
+			],
+			"allTests": [
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				},
+				{
+					"Status retornado = 200": true
+				}
+			]
+		},
+		{
+			"id": "982d6e9d-9c11-4122-81c7-c102ba54b098",
+			"name": "Deletar planeta id não existe",
+			"time": 134,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status retornado = 400": true
+			},
+			"testPassFailCounts": {
+				"Status retornado = 400": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				134,
+				133,
+				132,
+				134,
+				137,
+				135,
+				135,
+				134,
+				135,
+				134
+			],
+			"allTests": [
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				},
+				{
+					"Status retornado = 400": true
+				}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 16656,
+	"collection": {
+		"requests": [
+			{
+				"id": "b053d5b5-5de1-484c-9e5b-76f0c5275fda",
+				"method": "POST"
+			},
+			{
+				"id": "8ca0dbf6-218a-480d-927c-13d9c5a47a8d",
+				"method": "POST"
+			},
+			{
+				"id": "a8021c12-1eb4-4a48-a3b8-f5167ac5b0be",
+				"method": "POST"
+			},
+			{
+				"id": "c5c98420-1ee3-4ce4-8769-41c3f7804e96",
+				"method": "GET"
+			},
+			{
+				"id": "1387f7d7-d5aa-4733-a272-10265aeef04f",
+				"method": "GET"
+			},
+			{
+				"id": "89d22bd4-b99b-4246-a412-196eee81b56b",
+				"method": "GET"
+			},
+			{
+				"id": "d9f3028e-9e49-452d-b31d-d4da5f138b00",
+				"method": "GET"
+			},
+			{
+				"id": "9a56842d-d909-428e-a22d-5795d1a3e6c1",
+				"method": "GET"
+			},
+			{
+				"id": "b21112ca-881f-4045-b70e-544aa0663637",
+				"method": "DELETE"
+			},
+			{
+				"id": "982d6e9d-9c11-4122-81c7-c102ba54b098",
+				"method": "DELETE"
+			}
+		]
+	}
+}

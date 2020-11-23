@@ -15,17 +15,19 @@ import java.util.Optional;
 @Service
 public class PlanetServiceImpl implements PlanetService {
 
-    private final PlanetRepository repository;
-    private final SwApiService swapiService;
-
     @Autowired
-    public PlanetServiceImpl(PlanetRepository repository, SwApiService swapiService) {
-        this.repository = repository;
-        this.swapiService = swapiService;
+    private PlanetRepository repository;
+    @Autowired
+    private SwApiService swapiService;
+
+
+    public PlanetServiceImpl() {
     }
+
 
     @Override
     @Transactional(rollbackFor = Exception.class)
+
     public Planet createPlanet(Planet planet) throws PlanetException {
         Optional<Planet> plnt = repository.findByName(planet.getName());
         if (plnt.isPresent()) {
@@ -40,8 +42,7 @@ public class PlanetServiceImpl implements PlanetService {
         if (id.isEmpty()) {
             throw new PlanetException(Messages.EMPTY_ID);
         }
-        return repository.findById(id).orElseThrow(
-                () -> new PlanetException(Messages.NOT_FOUND));
+        return repository.findById(id).orElseThrow(() -> new PlanetException(Messages.NOT_FOUND));
     }
 
     @Override
@@ -49,8 +50,7 @@ public class PlanetServiceImpl implements PlanetService {
         if (name.isEmpty()) {
             throw new PlanetException(Messages.EMPTY_NAME);
         }
-        return repository.findByName(name)
-                .orElseThrow(() -> new PlanetException(Messages.NOT_FOUND));
+        return repository.findByName(name).orElseThrow(() -> new PlanetException(Messages.NOT_FOUND));
     }
 
     @Override

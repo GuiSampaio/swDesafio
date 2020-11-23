@@ -17,11 +17,11 @@ public class Planet {
 
     @Id
     private String id;
-    @NotBlank(message = "O nome vc deve preencher.")
+    @NotBlank(message = "Nome não deve ser vazio.")
     private String name;
-    @NotBlank(message = "O clima vc deve preencher.")
+    @NotBlank(message = "Clima não deve ser vazio.")
     private String climate;
-    @NotBlank(message = "O terreno vc deve preencher.")
+    @NotBlank(message = "Terreno não deve ser vazio.")
     private String terrain;
 
     private String numFilms;

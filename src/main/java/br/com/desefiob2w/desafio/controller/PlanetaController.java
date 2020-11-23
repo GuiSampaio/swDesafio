@@ -19,12 +19,8 @@ import java.net.URI;
 @RequestMapping(value = Routes.API)
 public class PlanetaController {
 
-    private final PlanetService planetService;
-
     @Autowired
-    public PlanetaController(PlanetService planetService) {
-        this.planetService = planetService;
-    }
+    private PlanetService planetService;
 
     @PostMapping(path = Routes.INCLUDE)
     public ResponseEntity<?> save(@Valid @RequestBody Planet planet, UriComponentsBuilder uriBuilder) {
@@ -76,7 +72,7 @@ public class PlanetaController {
     public ResponseEntity<?> deletePlanet(@PathVariable(name = "id") String id) {
         try {
             planetService.deletePlanet(id);
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ResponseDTO<>(Messages.DELETED));
+            return ResponseEntity.ok().body(new ResponseDTO<>(Messages.DELETED));
         } catch (PlanetException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {

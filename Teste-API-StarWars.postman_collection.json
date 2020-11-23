@@ -36,14 +36,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/planet/create",
+							"raw": "http://localhost:8080/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"create"
 							]
 						}
@@ -77,14 +76,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/planet/create",
+							"raw": "http://localhost:8080/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"create"
 							]
 						}
@@ -118,14 +116,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/planet/create",
+							"raw": "http://localhost:8080/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"create"
 							]
 						}
@@ -156,14 +153,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/findById/5f00055844a32211476c7d8a",
+							"raw": "http://localhost:8080/findById/5f00055844a32211476c7d8a",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"findById",
 								"5f00055844a32211476c7d8a"
 							]
@@ -189,14 +185,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/findAll",
+							"raw": "http://localhost:8080/findAll",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"findAll"
 							]
 						}
@@ -221,14 +216,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/findByName/Tatooine",
+							"raw": "http://localhost:8080/findByName/Tatooine",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"findByName",
 								"Tatooine"
 							]
@@ -244,7 +238,7 @@
 							"script": {
 								"id": "64a86bdf-3c3f-4df9-b5d6-f615a3fc36d1",
 								"exec": [
-									"tests[\"Status retornado = 404\"] = responseCode.code === 404;"
+									"tests[\"Status retornado = 400\"] = responseCode.code === 400;"
 								],
 								"type": "text/javascript"
 							}
@@ -254,14 +248,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/findByName/sonic",
+							"raw": "http://localhost:8080/findByName/sonic",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"findByName",
 								"sonic"
 							]
@@ -277,7 +270,7 @@
 							"script": {
 								"id": "dd62ae83-bb73-4bc8-96c6-8ec70482c74d",
 								"exec": [
-									"tests[\"Status retornado = 404\"] = responseCode.code === 404;"
+									"tests[\"Status retornado = 400\"] = responseCode.code === 400;"
 								],
 								"type": "text/javascript"
 							}
@@ -287,14 +280,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/findById/40028922",
+							"raw": "http://localhost:8080/findById/40028922",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"findById",
 								"40028922"
 							]
@@ -316,7 +308,7 @@
 							"script": {
 								"id": "7eb02832-8912-4111-998a-25827407a166",
 								"exec": [
-									"tests[\"Status retornado = 204\"] = responseCode.code === 204;"
+									"tests[\"Status retornado = 200\"] = responseCode.code === 200;"
 								],
 								"type": "text/javascript"
 							}
@@ -326,14 +318,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/delete/5f0563ab53eea838fda18834",
+							"raw": "http://localhost:8080/delete/5f0563ab53eea838fda18834",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"delete",
 								"5f0563ab53eea838fda18834"
 							]
@@ -349,7 +340,7 @@
 							"script": {
 								"id": "9f603729-1093-4a4a-bda0-000e41ac541b",
 								"exec": [
-									"tests[\"Status retornado = 404\"] = responseCode.code === 404;"
+									"tests[\"Status retornado = 400\"] = responseCode.code === 400;"
 								],
 								"type": "text/javascript"
 							}
@@ -359,14 +350,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/planet/delete/sonic",
+							"raw": "http://localhost:8080/delete/sonic",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"planet",
 								"delete",
 								"sonic"
 							]
